@@ -7,7 +7,6 @@ import (
 	"github.com/andybalholm/brotli"
 	lru "github.com/hashicorp/golang-lru"
 	"go-http-server/param"
-	"golang.org/x/exp/slices"
 	"io"
 	"mime"
 	"net/http"
