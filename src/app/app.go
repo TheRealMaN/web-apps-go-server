@@ -210,11 +210,11 @@ func (app *App) HandlerFuncNew(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if slices.Contains(app.params.IgnoreCacheControlPaths, r.URL.Path) || path.Ext(responseItem.Name) == ".html" {
-		w.Header().Set("Cache-Control", "no-store")
-	} else {
-		w.Header().Set("Cache-Control", fmt.Sprintf("max-age=%d", app.params.CacheControlMaxAge))
-	}
+	// if slices.Contains(app.params.IgnoreCacheControlPaths, r.URL.Path) || path.Ext(responseItem.Name) == ".html" {
+	// 	w.Header().Set("Cache-Control", "no-store")
+	// } else {
+	// 	w.Header().Set("Cache-Control", fmt.Sprintf("max-age=%d", app.params.CacheControlMaxAge))
+	// }
 
 	var brotliApplicable bool
 	var gzipApplicable bool
