@@ -45,9 +45,9 @@ var Flags = []cli.Flag{
 	//	Value:   false,
 	//},
 	&cli.Int64Flag{
-		EnvVars: []string{"CACHE_MAX_AGE"},
-		Name:    "cache-max-age",
-		Value:   604800,
+		EnvVars: []string{"CACHE_CONTROL_MAX_AGE"},
+                Name:    "cache-control-max-age",
+		Value:   31536000,
 	},
 	&cli.BoolFlag{
 		EnvVars: []string{"SPA_MODE"},
