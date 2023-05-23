@@ -215,6 +215,9 @@ func (app *App) HandlerFuncNew(w http.ResponseWriter, r *http.Request) {
 	// 	w.Header().Set("Cache-Control", fmt.Sprintf("max-age=%d", app.params.CacheControlMaxAge))
 	// }
 
+	// Cache all files for maximum max-age time (1 year)
+	w.Header().Set("Cache-Control", fmt.Sprintf("max-age=%d", app.params.CacheControlMaxAge))
+
 	var brotliApplicable bool
 	var gzipApplicable bool
 	var overThreshold = int64(len(responseItem.Content)) > app.params.Threshold
