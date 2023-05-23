@@ -4,6 +4,7 @@ WORKDIR /code/
 
 ADD src/ .
 
+RUN go get -u ./...
 RUN go build -o dist/ -ldflags "-s -w"
 
 FROM alpine:latest
