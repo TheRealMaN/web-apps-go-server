@@ -1,4 +1,4 @@
-FROM golang:1.18.2-alpine3.16 as builder
+FROM golang:alpine as builder
 
 WORKDIR /code/
 
@@ -6,7 +6,7 @@ ADD src/ .
 
 RUN go build -o dist/ -ldflags "-s -w"
 
-FROM alpine:3.16
+FROM alpine:latest
 WORKDIR /code/
 
 COPY docker-entrypoint.sh /bin/
